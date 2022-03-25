@@ -23,7 +23,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'moockinho',
+    'simplemooc',
     'core',
     'accounts',
     'courses'
@@ -40,7 +40,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'moockinho.urls'
+ROOT_URLCONF = 'simplemooc.urls'
 
 TEMPLATES = [
     {
@@ -58,7 +58,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'moockinho.wsgi.application'
+WSGI_APPLICATION = 'simplemooc.wsgi.application'
 
 
 # Database
