@@ -1,6 +1,6 @@
 import os
 import environ
-from simplemooc.settings.base import *
+from moockinho.settings.base import *
 
 env = environ.Env()
 
