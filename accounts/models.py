@@ -9,7 +9,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     
     email = models.EmailField('E-mail', unique=True,
         validators=[validators.RegexValidator(re.compile('^[\w.@+-]+$'), 'O e-mail não pode conter espaços', 'invalid')])
-    name = models.CharField('Nome', max_length=100, blank=True)
+    name = models.CharField('Nome', max_length=100, blank=True, default="Sem nome")
     is_active = models.BooleanField('Está ativo?', blank=True, default=True)
     is_staff = models.BooleanField('É administrador?', blank=True, default=False)
     date_joined = models.DateTimeField('Data de Cadastro', auto_now_add=True)

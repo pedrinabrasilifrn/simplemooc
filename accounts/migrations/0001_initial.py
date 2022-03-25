@@ -10,9 +10,8 @@ from accounts.models import User
 
 class Migration(migrations.Migration):
     def seed_data(apps, schema_editor):
-        user = User(username='Admin',
+        user = User(name='Admin',
                     email='admin@gmail.com',
-                    
                     is_staff=True,
                     is_superuser=True,
                    )
