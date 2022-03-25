@@ -1,0 +1,6 @@
+<li><a class='pure-menu-heading'>Meus Cursos</a></li>
+{% for enrollment in enrollments %}
+<li><a href="#">{{enrollment.course}}</a></li>
+{% empty %}
+<li><a>Você não está escrito em nenhum curso.</a></li>
+{% endfor %}

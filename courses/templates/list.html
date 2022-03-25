@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div class="splash">
+        <div class="pure-g-r content-ribbon">
+            <div class="pure-u-1">
+                <div class="l-box splash-text">
+                    <h1 class="splash-head">
+                        Cursos
+                    </h1>
+                    <h2 class="splash-subhead">
+                        Abaixo a lista de cursos disponíveis na plataforma
+                    </h2>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        
+        {% for c in courses %}
+        <div class="pure-g-r content-ribbon">
+            <div class="pure-u-1-3">
+                <div class="l-box">
+                       <a href="{{ c.get_absolute_url }}">
+                        {% if c.image %}
+                            <img src="{{ c.image.url }}" alt="{{c}}" class='course-cover'>
+                        {% else %}
+                            <img src="{% static 'img/no_img.png' %}" alt="{{c}}"  class='course-cover'>
+                        {% endif %}
+                       </a> 
+                    
+                </div>
+            </div>
+            <div class="pure-u-2-3">
+                <div class="l-box">
+                    <a href="{% url 'courses:detail_pk' pk=c.pk %}">
+                        <h4 class="content-subhead">{{c.name}}</h4>
+                    </a>
+                    <div>
+                        {{c.description | linebreaks }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="pure-g-r content-ribbon">
+            <div class="pure-u-1-3">
+                <div class="l-box">
+                       <p>Nenhum curso está disponível.</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
